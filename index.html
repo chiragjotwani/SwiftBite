@@ -1,4 +1,21 @@
-﻿import { useState, useEffect, useRef } from "react";
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SwiftBite Preview</title>
+  <style>
+    html, body, #root { margin: 0; min-height: 100%; background: #faf9f6; }
+    body { font-family: Arial, sans-serif; }
+  </style>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+const { useState, useEffect, useRef } = React;
 
 /* â”€â”€â”€ UNSPLASH IMAGES per restaurant category â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const RESTAURANT_IMAGES = {
@@ -1011,7 +1028,7 @@ function TrackingPage({ onDone }) {
 }
 
 /* â”€â”€â”€ ROOT APP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-export default function App() {
+function App() {
   const [page, setPage] = useState("home");
   const [selectedRestaurant, setSelectedRestaurant] = useState(null);
   const [cart, setCart] = useState([]);
@@ -1112,3 +1129,11 @@ export default function App() {
   );
 }
 
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(React.createElement(App));
+
+  </script>
+</body>
+</html>
